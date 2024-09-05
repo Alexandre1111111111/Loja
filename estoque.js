@@ -3,6 +3,8 @@ const apr = document.querySelector("#apr");
 const ele = document.querySelector("#ele");
 const ex = document.querySelector("#ex");
 const moveis = document.querySelector(".moveis");
+const xchair = document.querySelector(".xchair");
+const ld = document.querySelector(".ld");
 
 mv.addEventListener("click", () => {
     mv.style.color = "#deff65";
@@ -67,3 +69,7 @@ function ter() {
 function qua() {
     moveis.style.display = "none";
 }
+
+xchair.addEventListener("click", () => {
+
+})

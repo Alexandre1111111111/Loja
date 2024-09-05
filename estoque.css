@@ -31,6 +31,7 @@ header {
     display: flex;
     justify-content: left;
     flex-direction: column;
+    transition-duration: 0.3s;
 }
 .prod {
     background-image: url(bge.jpg);
@@ -48,16 +49,16 @@ header {
     overflow-y: scroll;
 }
 .prod::-webkit-scrollbar {
-    width: 15px;
+    width: 1vw;
     background-color: #000000;
-    border: 1px solid #e63939;
-    border-radius: 50px;
-    box-shadow: inset 0px 0px 0px 1px #fbff0db4;
+    border: 0.1vh solid #e63939;
+    border-radius: 5vh;
+    box-shadow: inset 0px 0px 0px 0.1vh #fbff0db4;
 }
 .prod::-webkit-scrollbar-thumb {
     background-color: #eec16d;
-    border-radius: 50px;
-    border: 1px solid #18525a;
+    border-radius: 5vh;
+    border: 0.1vh solid #18525a;
     cursor: pointer;
 }
 .prod::-webkit-scrollbar-thumb:hover {
@@ -110,6 +111,7 @@ header {
   }
   
   header .search-container button {
+    height: 5vh;
     float: right;
     background: #ddd;
     border: none;
@@ -119,7 +121,7 @@ header {
     border-bottom-right-radius: 1vh;
   }
   header .search-container img {
-    height: 4vh;
+    height: 100%;
   }
 .ld h1 {
     font-size: 5vh;
