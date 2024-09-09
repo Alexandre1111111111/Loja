@@ -11,10 +11,16 @@
 </head>
 <body>
     <header>
+        <button id="vol">
+            <img src="https://cdn-icons-png.flaticon.com/512/7699/7699123.png" alt="">
+        </button>
         <div class="search-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Procurar.." name="search">
+        <form id="fm" action="/action_page.php" autocomplete="off">
+            <input type="text" id="sch" placeholder="Procurar.." name="search">
             <button type="submit"><img src="https://cdn-icons-png.flaticon.com/512/342/342359.png" alt=""></button>
+            <ul id="myUL">
+                <li><a href="#">Cadeira Ergonomica Ultra-tecnológica - X-Chair</a></li>
+              </ul>
           </form>
           </div>
           <div class="config">
@@ -27,15 +33,30 @@
         <button id="apr">Aparelhos</button>
         <button id="ele">Eletrodomésticos</button>
         <button id="ex">Inovadores</button>
+        <button id="dv">Diversos</button>
+        <button id="nov">Novidades</button>
     </div>
     <div class="prod">
         <div class="moveis">
-        <div class="xchair">
+        <div class="prod1">
+            <div class="new"><h1>Novo</h1></div>
             <img src="xchair.png" alt="">
-            <h1 id="pr"><em id="ap">A partir de</em>R$250.000</h1>
+            <h1 class="pr"><em class="ap">A partir de</em>R$250.000</h1>
+            <div class="prodtxt">
             <h1>Cadeira Ergonomica Ultra-tecnológica - X-Chair</h1>
         </div>
+        </div>
     </div>
+    </div>
+    <div class="com">
+        <div class="newdes">
+            <h1>Novo</h1>
+        </div>
+        <h1 class="txtp"></h1>
+        <h1 class="prc"></h1>
+        <h1 class="par">12x de <em id="prej"></em> sem juros</h1>
+        <button>Comprar</button>
+        <h1 id="est">14x em estoque</h1>
     </div>
     <script src="estoque.js"></script>
 </body>
