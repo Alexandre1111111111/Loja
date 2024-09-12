@@ -1,7 +1,6 @@
 const mv = document.querySelector("#mv");
 const apr = document.querySelector("#apr");
 const ele = document.querySelector("#ele");
-const ex = document.querySelector("#ex");
 const moveis = document.querySelector(".moveis");
 const prod1 = document.querySelector(".prod1");
 const prodtxt = document.querySelector(".prodtxt");
@@ -20,9 +19,13 @@ const nov = document.querySelector("#nov");
 const sch = document.querySelector("#sch");
 const myUL = document.querySelector("#myUL");
 const myLI = document.querySelector("#myUL li");
+const lg = document.querySelector(".lg");
+const pr1 = document.querySelector("#pr1");
 
 let parc;
 let txtc;
+
+pr1.src = "xchair.png";
 
 mv.addEventListener("click", () => {
     mv.style.color = "#deff65";
@@ -31,8 +34,6 @@ mv.addEventListener("click", () => {
     apr.style.borderColor = "#ffffff";
     ele.style.color = "#ffffff";
     ele.style.borderColor = "#ffffff";
-    ex.style.color = "#ffffff";
-    ex.style.borderColor = "#ffffff";
     dv.style.color = "#ffffff";
     dv.style.borderColor = "#ffffff";
     nov.style.color = "#ffffff";
@@ -47,8 +48,6 @@ apr.addEventListener("click", () => {
     mv.style.borderColor = "#ffffff";
     ele.style.color = "#ffffff";
     ele.style.borderColor = "#ffffff";
-    ex.style.color = "#ffffff";
-    ex.style.borderColor = "#ffffff";
     dv.style.color = "#ffffff";
     dv.style.borderColor = "#ffffff";
     nov.style.color = "#ffffff";
@@ -63,8 +62,6 @@ ele.addEventListener("click", () => {
     mv.style.borderColor = "#ffffff";
     apr.style.color = "#ffffff";
     apr.style.borderColor = "#ffffff";
-    ex.style.color = "#ffffff";
-    ex.style.borderColor = "#ffffff";
     dv.style.color = "#ffffff";
     dv.style.borderColor = "#ffffff";
     nov.style.color = "#ffffff";
@@ -72,25 +69,7 @@ ele.addEventListener("click", () => {
     ter();
 });
 
-ex.addEventListener("click", () => {
-    ex.style.color = "#deff65";
-    ex.style.borderColor = "#deff65";
-    mv.style.color = "#ffffff";
-    mv.style.borderColor = "#ffffff";
-    apr.style.color = "#ffffff";
-    apr.style.borderColor = "#ffffff";
-    ele.style.color = "#ffffff";
-    ele.style.borderColor = "#ffffff";
-    dv.style.color = "#ffffff";
-    dv.style.borderColor = "#ffffff";
-    nov.style.color = "#ffffff";
-    nov.style.borderColor = "#ffffff";
-    qua();
-});
-
 dv.addEventListener("click", () => {
-    ex.style.color = "#ffffff";
-    ex.style.borderColor = "#ffffff";
     mv.style.color = "#ffffff";
     mv.style.borderColor = "#ffffff";
     apr.style.color = "#ffffff";
@@ -105,8 +84,6 @@ dv.addEventListener("click", () => {
 });
 
 nov.addEventListener("click", () => {
-    ex.style.color = "#ffffff";
-    ex.style.borderColor = "#ffffff";
     mv.style.color = "#ffffff";
     mv.style.borderColor = "#ffffff";
     apr.style.color = "#ffffff";
@@ -147,6 +124,7 @@ function amp() {
     prodimg.style.height = "80%";
     com.style.display = "flex";
     vol.style.display = "flex";
+    lg.style.left = "10vw";
     setTimeout(() => {
         com.style.right = "0vw";
         vol.style.left = "0vw";
@@ -178,6 +156,7 @@ vol.addEventListener("click", () => {
     prodimg.style.height = "60%";
     com.style.right = "-30vw";
     vol.style.left = "-8vw";
+    lg.style.left = "3vw";
     setTimeout(() => {
         ld.style.opacity = "1";
     }, 50)
