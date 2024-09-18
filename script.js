@@ -1,74 +1,3 @@
-const mv = document.querySelector("#mv");
-const apr = document.querySelector("#apr");
-const ele = document.querySelector("#ele");
-const moveis = document.querySelector(".moveis");
-const prod1 = document.querySelector(".prod1");
-const prodtxt = document.querySelector(".prodtxt");
-const prodimg = document.querySelector(".prod img");
-const prod = document.querySelector(".prod");
-const ld = document.querySelector(".ld");
-const newp = document.querySelector(".new");
-const pr = document.querySelector(".pr");
-const prc = document.querySelector(".prc");
-const com = document.querySelector(".com");
-const txtp = document.querySelector(".txtp");
-const prej = document.querySelector("#prej");
-const vol = document.querySelector("#vol");
-const dv = document.querySelector("#dv");
-const nov = document.querySelector("#nov");
-const sch = document.querySelector("#sch");
-const myUL = document.querySelector("#myUL");
-const myLI = document.querySelector("#myUL li");
-const lg = document.querySelector(".lg");
-const pr1 = document.querySelector("#pr1");
-const desc = document.querySelector(".desc");
-const img1 = document.querySelector("#img1");
-const img2 = document.querySelector("#img2");
-const img3 = document.querySelector("#img3");
-const e1 = document.querySelector(".e1");
-const e2 = document.querySelector(".e2");
-const e3 = document.querySelector(".e3");
-const e4 = document.querySelector(".e4");
-const e5 = document.querySelector(".e5");
-const exc = document.querySelector("#exc");
-const coment = document.querySelector("#coment");
-const cbtn = document.querySelector("#cbtn");
-const cts = document.querySelector(".cts");
-const nd = document.querySelector("#nd");
-const e1r = document.querySelector(".e1r");
-const e2r = document.querySelector(".e2r");
-const e3r = document.querySelector(".e3r");
-const e4r = document.querySelector(".e4r");
-const e5r = document.querySelector(".e5r");
-const re = document.querySelector(".re");
-const avv = document.querySelector(".avv");
-const prn = document.querySelector("#prn");
-const cpr = document.querySelector("#cpr");
-const quant = document.querySelector("#quant");
-const vd = document.querySelector(".vd");
-const btnspv = document.querySelector(".btnspv");
-const prox = document.querySelector("#prox");
-const volt = document.querySelector("#volt");
-const pimg = document.querySelector("#pimg");
-const lin = document.querySelector("#lin");
-const drop = document.querySelector(".drop");
-
-let parc;
-let txtc;
-let cmtr;
-let ctxt;
-let cps;
-let cc = 0;
-let rate1;
-let rate2;
-let rate3;
-let rate4;
-let rate5;
-let dt;
-let nota = 0;
-let notact = 0;
-let vds = 5;
-
 pr1.src = "xchair.png";
 
 e1r.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
@@ -195,10 +124,9 @@ function amp() {
     prod1.style.cursor = "auto";
     txtp.textContent = prodtxt.textContent;
     prc.innerHTML = pr.innerHTML;
-    txtc = pr.textContent.replaceAll(".", "");
-    parc = Math.round(txtc.slice(13) * 1 / 12);
+    txtc = vl.textContent.replaceAll(".", "");
+    parc = Math.round(val.toString().replaceAll(".", "") * 1 / 12);
     parc = parc.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-    prej.textContent = `R$${parc}`;
     prod1.removeEventListener("click", amp);
 }
 
@@ -230,7 +158,7 @@ vol.addEventListener("click", () => {
         prc.innerHTML = "";
         desc.style.display = "none";
     }, 300);
-    pimg.src = "xchair.png";
+    i1();
     prod1.addEventListener("click", amp);
 })
 
@@ -256,13 +184,48 @@ function myFunction() {
 sch.addEventListener("keyup", myFunction);
 
 setInterval(() => {
-    if(sch.value == "") {
+    if(sch.value.trim() == "") {
         myUL.style.display = "none";
     }
-    avv.textContent = `${cc} Avaliações`;
     prn.textContent = (notact / cc).toFixed(1);
     prn.style.textShadow = (notact / cc) >= 7? "0.3vh 0.3vh 0.3vh #126e00;" : (notact / cc) >= 4? "0.3vh 0.3vh 0.3vh #ebd534" : "0.3vh 0.3vh 0.3vh #eb3434";
-}, 10)
+    switch (document.documentElement.lang) {
+        case "en":
+            flag.src = "https://cdn-icons-png.flaticon.com/512/330/330425.png";
+        break;
+        case "es":
+            flag.src = "https://cdn-icons-png.flaticon.com/512/330/330557.png";
+        break;
+        case "pt":
+            flag.src = "https://cdn-icons-png.flaticon.com/512/630/630591.png";
+        break;
+        case "fr":
+            flag.src = "https://cdn-icons-png.flaticon.com/512/321/321230.png";
+        break;
+        case "ru":
+            flag.src = "https://cdn-icons-png.flaticon.com/512/330/330437.png";
+        break;
+    }
+    if(localStorage.logado == 'true') {
+        ct.style.display = "none";
+        lgi.style.display = "none";
+        cad.style.justifyContent = "right";
+        lin.style.marginRight = "5vh";
+        user.style.display = "flex";
+    }
+    else {
+        ct.style.display = "block";
+        lgi.style.display = "block";
+    }
+}, 0)
+
+desl.addEventListener("click", () => {
+    localStorage.logado = 'false';
+    localStorage.nome = '';
+    localStorage.email = '';
+    localStorage.senha = '';
+    window.location.reload();
+})
 
 window.addEventListener("click", () => {
     myUL.style.display = "none";
@@ -359,7 +322,7 @@ function fic() {
     ctxt = document.querySelector(`.ctsc0`);
     cps = document.querySelector(`.ps0`);
     dt = document.querySelector(`.dt0`);
-    dt.textContent = "03/10/2023";
+    dt.textContent = new Date("2023/10/03").toLocaleDateString();
     cps.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/8246/8246830.png" alt=""><div><div class="e1c0"></div><div class="e2c0"></div><div class="e3c0"></div><div class="e4c0"></div><div class="e5c0"></div></div>Ricardo`;
     ctxt.textContent = "Muito Bom! Vale a pena comprar!";
     rate1 = document.querySelector(`.e1c0`);
@@ -380,7 +343,7 @@ function fic() {
     ctxt = document.querySelector(`.ctsc1`);
     cps = document.querySelector(`.ps1`);
     dt = document.querySelector(`.dt1`);
-    dt.textContent = "27/05/2024";
+    dt.textContent = new Date("2024/05/27").toLocaleDateString();
     cps.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt=""><div><div class="e1c1"></div><div class="e2c1"></div><div class="e3c1"></div><div class="e4c1"></div><div class="e5c1"></div></div>Allan`;
     ctxt.textContent = "Legal! Mas não sei se vale o custo.";
     rate1 = document.querySelector(`.e1c1`);
@@ -401,7 +364,12 @@ function fic() {
 fic();
 
 function env() {
-    if(coment.value.trim() == "" || e1r.style.backgroundImage == 'url("https://cdn-icons-png.flaticon.com/512/7408/7408690.png")') {
+    if(coment.value.trim() == "") {
+        alert("Comentário não pode ser vazio!");
+        return;
+    }
+    if (e1r.style.backgroundImage == 'url("https://cdn-icons-png.flaticon.com/512/7408/7408690.png")') {
+        alert("Você precisa avaliar o produto!");
         return;
     }
     cmtr = document.createElement("div");
@@ -551,7 +519,6 @@ cpr.addEventListener("click", () => {
     if(quant.textContent > 0) {
         quant.textContent -= 1;
         vds++;
-        vd.textContent = `${vds} Vendas`;
         cbtn.addEventListener("click", env);
     }
 })
@@ -562,4 +529,21 @@ lin.addEventListener("click", () => {
 
 drop.addEventListener("mouseleave", () => {
     drop.style.display = "none";
+})
+
+droplg.style.display = "none";
+
+user.addEventListener("click", () => {
+    if(droplg.style.display == "none") {
+    droplg.style.display = "flex";
+    setTimeout(() => {
+        droplg.style.right = "0";
+    }, 10)
+}
+    else {
+        droplg.style.right = "-100%";
+        setTimeout(() => {
+            droplg.style.display = "none";
+        }, 300)
+    }
 })

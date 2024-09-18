@@ -112,6 +112,7 @@ header {
     overflow: hidden;
     transition: ease-in;
     transition-duration: 0.3s;
+    box-shadow: 0.5vh 0.5vh 0.5vh #000;
 }
 .prod1 img {
     height: 60%;
@@ -449,20 +450,21 @@ header {
     font-size: 3vh;
     margin: 1vh;
     text-align: right;
-    width: 90%;
     color: #c4bd59;
     text-shadow: 0.5vh 0.5vh 0.5vh #000;
+}
+.inf {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #fre {
     font-size: 2.5vh;
     margin: 1vh;
-    text-align: left;
-    width: 90%;
     color: #59c470;
     text-shadow: 0.5vh 0.5vh 0.5vh #000;
-    position: relative;
-    bottom: 6vh;
     display: flex;
     align-items: center;
 }
@@ -633,7 +635,7 @@ header {
     margin-top: 3vh;
     margin-bottom: 3vh;
     position: absolute;
-    bottom: 0vh;
+    bottom: -1vh;
 }
 #nota {
     font-size: 5vh;
@@ -970,6 +972,8 @@ header {
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    overflow: hidden;
+    display: none;
 }
 @keyframes brd {
     0% {
@@ -1000,6 +1004,8 @@ header {
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    overflow: hidden;
+    display: none;
 }
 
 #lin {
@@ -1136,15 +1142,16 @@ header {
 }
 .drop {
     width: 15vw;
-    height: 30vh;
+    height: 40vh;
     background-color: #410202c7;
     position: absolute;
-    bottom: -26.8vh;
+    bottom: -36.8vh;
     right: 4vh;
     display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    box-shadow: 0.5vh 0.5vh 0.5vh #000;
 }
 .drop div {
     width: 100%;
@@ -1178,6 +1185,81 @@ header {
     border: none;
     padding: 0;
     color: #ffffff9f;
+}
+.user {
+    width: fit-content;
+    height: 65%;
+    background-color: #410202c7;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3vh;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 0.3vh solid #d80000;
+}
+
+.user img {
+    height: 100%;
+}
+
+.droplg {
+    width: 20vw;
+    height: fit-content;
+    background-color: #41020270;
+    position: absolute;
+    transition-duration: 0.3s;
+    right: -15vw;
+    top: 13vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 0.3vh solid #5e0f0f;
+    z-index: -1;
+    box-shadow: 0.5vh 0.5vh 0.5vh #000;
+}
+.droplg div {
+    width: 100%;
+    height: 10vh;
+    background-color: #4102023a;
+    border: 0.3vh solid #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    transition-duration: 0.3s;
+}
+
+.droplg div img {
+    height: 5vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+.droplg div h1 {
+    font-size: 3vh;
+    margin: 0;
+    height: fit-content;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #ffffff9f;
+}
+.droplg div:hover {
+    background-color: #5e0202e0;
+}
+
+.droplg div:active {
+    background-color: #41020266;
+}
+.droplg h1 {
+    font-size: 3vh;
+    width: 90%;
+    text-align: left;
+    margin: 1vh;
+    color: #ffaaaa;
+    text-shadow: 0.5vh 0.5vh 0.5vh #000;
 }
 
 @keyframes pulsetr {
