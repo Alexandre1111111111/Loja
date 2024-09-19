@@ -322,6 +322,7 @@ header {
     animation-timing-function: linear;
     position: relative;
     left: 90%;
+    white-space: nowrap;
 }
 .txtpct {
     font-size: 4vh;
@@ -1190,18 +1191,36 @@ header {
     width: fit-content;
     height: 65%;
     background-color: #410202c7;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 3vh;
-    cursor: pointer;
     border-radius: 100%;
     border: 0.3vh solid #d80000;
+    transition-duration: 0.3s;
+}
+.nmu {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .user img {
     height: 100%;
+}
+#usu {
+    color: #e47373;
+    letter-spacing: 0.1vw;
+}
+.nmu:hover #usu {
+    text-decoration: underline;
+}
+.nmu:hover .user {
+    background-color: #720606c7;
 }
 
 .droplg {
@@ -1260,6 +1279,9 @@ header {
     margin: 1vh;
     color: #ffaaaa;
     text-shadow: 0.5vh 0.5vh 0.5vh #000;
+}
+#cpr img {
+    height: 5vh;
 }
 
 @keyframes pulsetr {

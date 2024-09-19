@@ -211,11 +211,13 @@ setInterval(() => {
         lgi.style.display = "none";
         cad.style.justifyContent = "right";
         lin.style.marginRight = "5vh";
-        user.style.display = "flex";
+        nmu.style.display = "flex";
+        usu.textContent = localStorage.nome;
     }
     else {
         ct.style.display = "block";
         lgi.style.display = "block";
+        nmu.style.display = "none";
     }
 }, 0)
 
@@ -379,7 +381,7 @@ function env() {
     cps = document.querySelector(`.ps${cc}`);
     dt = document.querySelector(`.dt${cc}`);
     dt.textContent = new Date().toLocaleDateString();
-    cps.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/7915/7915522.png" alt=""><div><div class="e1c${cc}"></div><div class="e2c${cc}"></div><div class="e3c${cc}"></div><div class="e4c${cc}"></div><div class="e5c${cc}"></div></div>Você`;
+    cps.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/7915/7915522.png" alt=""><div><div class="e1c${cc}"></div><div class="e2c${cc}"></div><div class="e3c${cc}"></div><div class="e4c${cc}"></div><div class="e5c${cc}"></div></div>${localStorage.nome}`;
     ctxt.textContent = coment.value;
     rate1 = document.querySelector(`.e1c${cc}`);
     rate2 = document.querySelector(`.e2c${cc}`);
@@ -516,7 +518,11 @@ setInterval(() => {
 }, 10)
 
 cpr.addEventListener("click", () => {
-    if(quant.textContent > 0) {
+    if(localStorage.logado == 'false') {
+        alert("Você precisa estar logado para comprar!");
+        return;
+    }
+    else if(quant.textContent > 0) {
         quant.textContent -= 1;
         vds++;
         cbtn.addEventListener("click", env);
@@ -533,7 +539,7 @@ drop.addEventListener("mouseleave", () => {
 
 droplg.style.display = "none";
 
-user.addEventListener("click", () => {
+nmu.addEventListener("click", () => {
     if(droplg.style.display == "none") {
     droplg.style.display = "flex";
     setTimeout(() => {

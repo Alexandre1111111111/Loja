@@ -53,10 +53,11 @@ const pimg = document.querySelector("#pimg");
 const lin = document.querySelector("#lin");
 const drop = document.querySelector(".drop");
 const cad = document.querySelector(".cad");
-const user = document.querySelector(".user");
+const nmu = document.querySelector(".nmu");
 const droplg = document.querySelector(".droplg");
 const nusu = document.querySelector("#nusu");
 const desl = document.querySelector("#desl");
+const usu = document.querySelector("#usu");
 
 let parc;
 let txtc;
