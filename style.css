@@ -1249,6 +1249,7 @@ header {
     border: 0.3vh solid #5e0f0f;
     z-index: 4;
     box-shadow: 0.5vh 0.5vh 0.5vh #000;
+    z-index: 6;
 }
 .droplg div {
     width: 100%;
