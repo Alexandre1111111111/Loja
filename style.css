@@ -1307,6 +1307,7 @@ header {
     border: 0.3vh solid #830101;
     border-radius: 5vh;
     box-shadow: 0.5vh 0.5vh 0.5vh #000;
+    z-index: 3;
 }
 .off h1 {
     font-size: 2vh;
