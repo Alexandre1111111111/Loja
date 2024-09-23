@@ -217,6 +217,10 @@ header {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+.aparelhos {
+    display: none;
+    grid-template-columns: auto auto auto;
+}
 .new {
     height: 20vh;
     width: 20vw;
@@ -231,6 +235,28 @@ header {
     pointer-events: none;
 }
 .new h1 {
+    text-shadow: 0.5vh 0.5vh 0.5vh #000;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    width: 99%;
+    font-size: 3vh;
+}
+.pro {
+    height: 20vh;
+    width: 20vw;
+    background-image: url(new.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    margin-left: 19vw;
+    margin-bottom: 37vh;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+.pro h1 {
     text-shadow: 0.5vh 0.5vh 0.5vh #000;
     animation-name: pulse;
     animation-duration: 2s;
@@ -303,7 +329,7 @@ header {
     width: 28vw;
     border: 0.5vh solid #000;
     position: fixed;
-    bottom: 0;
+    top: 13vh;
     right: -30vw;
     display: none;
     align-items: center;
@@ -525,6 +551,7 @@ header {
     left: 3vw;
     cursor: pointer;
     transition-duration: 0.3s;
+    transform: rotate(-3deg);
 }
 #pr1 {
     width: 1.5vw;
@@ -1238,7 +1265,7 @@ header {
 .droplg {
     width: 21vw;
     height: fit-content;
-    background-color: #41020270;
+    background-color: #410202;
     position: absolute;
     transition-duration: 0.3s;
     right: -15vw;
@@ -1326,6 +1353,34 @@ header {
     font-size: 2vh;
     color: #f54747;
     letter-spacing: 0.1vw;
+}
+.prod1a {
+    border: 0.3vh solid #ffe23f65;
+    background: linear-gradient(0deg, rgba(23,23,23,1) 26%, rgba(0,0,0,1) 100%);
+    width: 25vw;
+    height: 25vw;
+    cursor: pointer;
+    margin: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 3vh;
+    overflow: hidden;
+    transition: ease-in;
+    transition-duration: 0.3s;
+    box-shadow: 0.5vh 0.5vh 0.5vh #000;
+}
+.prod1a img {
+    height: 60%;
+    margin: 2vh;
+    transition-duration: 0.3s;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.prod1a:hover {
+    border: 0.3vh solid #ffe23f;
 }
 
 @keyframes pulsetr {

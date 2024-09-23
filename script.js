@@ -79,22 +79,27 @@ nov.addEventListener("click", () => {
 
 function prim() {
     moveis.style.display = "grid";
+    aparelhos.style.display = "none";
 }
 
 function seg() {
     moveis.style.display = "none";
+    aparelhos.style.display = "grid";
 }
 
 function ter() {
     moveis.style.display = "none";
+    aparelhos.style.display = "none";
 }
 
 function qua() {
     moveis.style.display = "none";
+    aparelhos.style.display = "none";
 }
 
 function qui() {
     moveis.style.display = "none";
+    aparelhos.style.display = "none";
 }
 
 function amp() {
@@ -105,8 +110,10 @@ function amp() {
     prod.style.width = "100vw";
     pr.style.display = "none";
     prod.style.top = "13vh";
-    prod1.style.width = "70vw";
-    prod1.style.height = "65vh";
+    for (let i = 0; i < prods.length; i++) {
+        prods[i].style.width = "70vw";
+        prods[i].style.height = "65vh";
+    }
     prodimg.style.height = "80%";
     com.style.display = "flex";
     vol.style.display = "flex";
@@ -133,6 +140,7 @@ function amp() {
 }
 
 prod1.addEventListener("click", amp);
+prod1a.addEventListener("click", amp);
 
 vol.addEventListener("click", () => {
     off.style.display = "flex";
@@ -142,8 +150,10 @@ vol.addEventListener("click", () => {
     prod.style.width = "82vw";
     prod.style.top = "15vh";
     pr.style.display = "block";
-    prod1.style.width = "25vw";
-    prod1.style.height = "25vw";
+    for (let i = 0; i < prods.length; i++) {
+        prods[i].style.width = "25vw";
+        prods[i].style.height = "25vw";
+    }
     prodimg.style.height = "60%";
     com.style.right = "-30vw";
     vol.style.left = "-8vw";
