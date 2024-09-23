@@ -98,11 +98,13 @@ function qui() {
 }
 
 function amp() {
+    off.style.display = "none";
     newp.style.display = "none";
     ld.style.opacity = "0";
     prodtxt.style.display = "none";
     prod.style.width = "100vw";
     pr.style.display = "none";
+    prod.style.top = "13vh";
     prod1.style.width = "70vw";
     prod1.style.height = "65vh";
     prodimg.style.height = "80%";
@@ -133,10 +135,12 @@ function amp() {
 prod1.addEventListener("click", amp);
 
 vol.addEventListener("click", () => {
+    off.style.display = "flex";
     newp.style.display = "flex";
     ld.style.display = "block";
     prodtxt.style.display = "block";
     prod.style.width = "82vw";
+    prod.style.top = "15vh";
     pr.style.display = "block";
     prod1.style.width = "25vw";
     prod1.style.height = "25vw";
@@ -486,10 +490,24 @@ setInterval(() => {
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
         break;
+        case prn.textContent * 1 < 3:
+            e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e2.style.backgroundImage = "url(meio.png)";
+            e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+        break;
         case prn.textContent * 1 < 4:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            break;
+        case prn.textContent * 1 < 5:
+            e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e3.style.backgroundImage = "url(meio.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
@@ -500,6 +518,13 @@ setInterval(() => {
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
+        case prn.textContent * 1 < 7:
+            e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e4.style.backgroundImage = "url(meio.png)";
+            e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            break;
         case prn.textContent * 1 < 8:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
@@ -507,6 +532,14 @@ setInterval(() => {
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
+        case prn.textContent * 1 < 9:
+            e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+            e5.style.backgroundImage = "url(meio.png)";
+            break;
+        default:
         case prn.textContent * 1 < 10:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
@@ -553,3 +586,12 @@ nmu.addEventListener("click", () => {
         }, 300)
     }
 })
+
+window.onclick = function(event) {
+    if (!event.target.matches('.nmu') && droplg.style.right == "0px") {
+        droplg.style.right = "-100%";
+        setTimeout(() => {
+            droplg.style.display = "none";
+        }, 300)
+    }
+  }

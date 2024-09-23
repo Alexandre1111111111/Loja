@@ -58,6 +58,7 @@ const droplg = document.querySelector(".droplg");
 const nusu = document.querySelector("#nusu");
 const desl = document.querySelector("#desl");
 const usu = document.querySelector("#usu");
+const off = document.querySelector(".off");
 
 let parc;
 let txtc;
