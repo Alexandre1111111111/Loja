@@ -105,75 +105,83 @@ function qui() {
 function amp() {
     off.style.display = "none";
     newp.style.display = "none";
+    pro.style.display = "none";
     ld.style.opacity = "0";
-    prodtxt.style.display = "none";
+    prodtxt[sel].style.display = "none";
     prod.style.width = "100vw";
-    pr.style.display = "none";
+    pr[sel].style.display = "none";
     prod.style.top = "13vh";
     for (let i = 0; i < prods.length; i++) {
         prods[i].style.width = "70vw";
         prods[i].style.height = "65vh";
     }
-    prodimg.style.height = "80%";
+    pimg[sel].style.height = "80%";
     com.style.display = "flex";
     vol.style.display = "flex";
     lg.style.left = "10vw";
     sch.value = "";
     desc.style.display = "flex";
-    com.scrollTop = 0;
+    if(com.style.right != "0vw") {
+        com.scrollTop = 0;
+    }
     setTimeout(() => {
         com.style.right = "0vw";
         vol.style.left = "0vw";
         desc.style.opacity = "1";
+        prc.innerHTML = pr[sel].innerHTML;
+        txtc = vl[sel].textContent.replaceAll(".", "");
+        parc = Math.round(val.toString().replaceAll(".", "") * 1 / 12);
+        parc = parc.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
     }, 50);
     setTimeout(() => {
         ld.style.display = "none";
-        btnspv.style.display = "flex";
+        btnspv[sel].style.display = "flex";
     }, 300);
-    prod1.style.cursor = "auto";
-    txtp.textContent = prodtxt.textContent;
-    prc.innerHTML = pr.innerHTML;
-    txtc = vl.textContent.replaceAll(".", "");
-    parc = Math.round(val.toString().replaceAll(".", "") * 1 / 12);
-    parc = parc.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-    prod1.removeEventListener("click", amp);
+    prods[sel].style.cursor = "auto";
+    txtp.textContent = prodtxt[sel].textContent;
 }
 
-prod1.addEventListener("click", amp);
-prod1a.addEventListener("click", amp);
+prod1.addEventListener("click", () => {
+    sel = 0;
+    amp();
+});
+prod1a.addEventListener("click", () => {
+    sel = 1;
+    amp();
+});
 
 vol.addEventListener("click", () => {
     off.style.display = "flex";
     newp.style.display = "flex";
+    pro.style.display = "flex";
     ld.style.display = "block";
-    prodtxt.style.display = "block";
+    prodtxt[sel].style.display = "block";
     prod.style.width = "82vw";
     prod.style.top = "15vh";
-    pr.style.display = "block";
+    pr[sel].style.display = "block";
     for (let i = 0; i < prods.length; i++) {
         prods[i].style.width = "25vw";
         prods[i].style.height = "25vw";
     }
-    prodimg.style.height = "60%";
+    pimg[sel].style.height = "60%";
     com.style.right = "-30vw";
     vol.style.left = "-8vw";
     lg.style.left = "3vw";
     desc.style.opacity = "0";
     prod.scrollTop = 0;
-    btnspv.style.display = "none";
+    btnspv[sel].style.display = "none";
     setTimeout(() => {
         ld.style.opacity = "1";
     }, 50)
     setTimeout(() => {
         com.style.display = "none";
         vol.style.display = "none";
-        prod1.style.cursor = "pointer";
+        prods[sel].style.cursor = "pointer";
         txtp.textContent = "";
         prc.innerHTML = "";
         desc.style.display = "none";
     }, 300);
     i1();
-    prod1.addEventListener("click", amp);
 })
 
 function myFunction() {
@@ -198,6 +206,14 @@ function myFunction() {
 sch.addEventListener("keyup", myFunction);
 
 setInterval(() => {
+    if(sel == 1) {
+        newd.style.background = "linear-gradient(48deg, rgba(214,200,69,1) 0%, rgba(197,215,16,0.8911939775910365) 50%, rgba(255,246,46,0.7959558823529411) 100%)";
+        newdes.textContent = "50% Off";
+    }
+    else {
+        newd.style.background = "linear-gradient(48deg, rgba(255,66,66,1) 0%, rgba(180,25,25,1) 50%, rgba(96,0,0,1) 100%)";
+        newdes.textContent = "Novo";
+    }
     if(sch.value.trim() == "") {
         myUL.style.display = "none";
     }
@@ -249,7 +265,9 @@ window.addEventListener("click", () => {
 
 myLI.addEventListener("click", amp);
 
-pimg.style.height = "60%";
+for (let i = 0; i < 2; i++) {
+    pimg[i].style.height = "60%";
+}
 
 function i1() {
     img1.style.backgroundColor = "#30301a75";
@@ -261,9 +279,9 @@ function i1() {
     img3.style.backgroundColor = "#00000065";
     img3.style.boxShadow = "0.5vh 0.5vh 0.5vh #000";
     img3.style.borderColor = "#000";
-    pimg.src = "xchair.png";
-    if(pimg.style.height != "60%") {
-    pimg.style.height = "80%";
+    pimg[sel].src = "xchair.png";
+    if(pimg[sel].style.height != "60%") {
+    pimg[sel].style.height = "80%";
     }
 }
 
@@ -277,8 +295,8 @@ function i2() {
     img3.style.backgroundColor = "#00000065";
     img3.style.boxShadow = "0.5vh 0.5vh 0.5vh #000";
     img3.style.borderColor = "#000";
-    pimg.src = "x2.png";
-    pimg.style.height = "80%";
+    pimg[sel].src = "x2.png";
+    pimg[sel].style.height = "80%";
 }
 
 function i3() {
@@ -291,8 +309,8 @@ function i3() {
     img1.style.backgroundColor = "#00000065";
     img1.style.boxShadow = "0.5vh 0.5vh 0.5vh #000";
     img1.style.borderColor = "#000";
-    pimg.src = "x3.png";
-    pimg.style.height = "85%";
+    pimg[sel].src = "x3.png";
+    pimg[sel].style.height = "85%";
 }
 
 i1();
@@ -303,7 +321,8 @@ img2.addEventListener("click", i2);
 
 img3.addEventListener("click", i3);
 
-volt.addEventListener("click", () => {
+for (let i = 0; i < 2; i++) {
+volt[i].addEventListener("click", () => {
     switch (true) {
         case img1.style.backgroundColor == 'rgba(48, 48, 26, 0.46)':
             i3();
@@ -317,7 +336,7 @@ volt.addEventListener("click", () => {
     }
 })
 
-prox.addEventListener("click", () => {
+prox[i].addEventListener("click", () => {
     switch (true) {
         case img1.style.backgroundColor == 'rgba(48, 48, 26, 0.46)':
             i2();
@@ -330,6 +349,7 @@ prox.addEventListener("click", () => {
         break;
     }
 })
+}
 
 function fic() {
     cmtr = document.createElement("div");

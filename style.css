@@ -203,6 +203,7 @@ header {
     width: 90%;
     color: #63ff8a;
     text-shadow: 0.5vh 0.5vh 0.5vh #000;
+    margin-top: 2vh;
 }
 .ap {
     font-size: 2vh;
@@ -246,7 +247,7 @@ header {
 .pro {
     height: 20vh;
     width: 20vw;
-    background-image: url(new.png);
+    background-image: url(promo.png);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -263,7 +264,7 @@ header {
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     width: 99%;
-    font-size: 3vh;
+    font-size: 2.8vh;
 }
 
 @keyframes pulse {
@@ -520,6 +521,7 @@ header {
     position: absolute;
     top: 9vh;
     margin-right: 3vw;
+    z-index: 7;
   }
   
   #myUL li a {
@@ -1381,6 +1383,23 @@ header {
 }
 .prod1a:hover {
     border: 0.3vh solid #ffe23f;
+}
+.dsh {
+    font-size: 2vh;
+    margin: 0;
+    color: #7e7e7e;
+    width: 90%;
+    text-align: right;
+    text-decoration: line-through;
+    position: relative;
+    top: 2vh;
+}
+.nm {
+    margin: 0.5vh;
+    margin-top: 1vh;
+}
+#pimg {
+    margin: 0;
 }
 
 @keyframes pulsetr {

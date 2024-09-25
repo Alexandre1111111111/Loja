@@ -8,12 +8,13 @@ const cat = document.querySelector(".ld h1");
 const newt = document.querySelector(".new h1");
 const nm = document.querySelector(".nm");
 const ap = document.querySelector(".ap");
-const vl = document.querySelector("#vl");
+const vl = document.querySelectorAll("i#vl");
 const ct = document.querySelector("#ct");
 const lgi = document.querySelector("#lg");
 const nms = document.querySelector("#nms");
 const par = document.querySelector(".par");
 const newdes = document.querySelector(".newdes h1");
+const newd = document.querySelector(".newdes");
 const fre = document.querySelector("#fre");
 const est = document.querySelector("#est");
 const avtxt = document.querySelector(".avtxt h1");
@@ -151,14 +152,14 @@ function converter() {
 
         break;
         case "pt":
-            val = Math.round(vl.textContent.replaceAll(".", "") * 1);
+            val = Math.round(vl[sel].textContent.replaceAll(".", "") * 1);
             prej.textContent = `R$${parc}`;
         break;
         case "fr":
 
         break;
         case "ru":
-            val = Math.round(vl.textContent.replaceAll(".", "") * 16.68);
+            val = Math.round(vl[sel].textContent.replaceAll(".", "") * 16.68);
             prej.textContent = `${parc}₽`;
         break;
     }
