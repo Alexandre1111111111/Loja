@@ -96,6 +96,8 @@ setInterval(() => {
             document.title = "NextHome - O Melhor da Tecnologia para a sua Casa!";
             converter();
             nusu.textContent = `Olá, ${localStorage.nome}`;
+            vd.textContent = `${vds} Vendas`;
+            avv.textContent = `${cc} Avaliações`;
         break;
         case "fr":
             document.title = "NextHome - Le meilleur de la technologie pour votre maison!";

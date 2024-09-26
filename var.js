@@ -1,7 +1,6 @@
 const mv = document.querySelector("#mv");
 const apr = document.querySelector("#apr");
 const ele = document.querySelector("#ele");
-const moveis = document.querySelector(".moveis");
 const prod1 = document.querySelector(".prod1");
 const prod1a = document.querySelector(".prod1a");
 const prodtxt = document.querySelectorAll("div.prodtxt");
@@ -59,12 +58,14 @@ const nusu = document.querySelector("#nusu");
 const desl = document.querySelector("#desl");
 const usu = document.querySelector("#usu");
 const off = document.querySelector(".off");
-const aparelhos = document.querySelector(".aparelhos");
 const pro = document.querySelector(".pro");
+const dsh = document.querySelectorAll("h1.dsh");
+const descdsh = document.querySelector(".descdsh");
 
 let parc;
 let txtc;
 let cmtr;
+let cmtr2;
 let ctxt;
 let cps;
 let cc = 0;
@@ -78,5 +79,10 @@ let nota = 0;
 let notact = 0;
 let vds = 5;
 let sel = 0;
+let selm = 0;
+let sela = 0;
+let sele = 0;
+let seld = 0;
+let seln = 0;
 
 const prods = [prod1, prod1a];

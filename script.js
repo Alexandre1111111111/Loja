@@ -103,14 +103,34 @@ function qui() {
 }
 
 function amp() {
+    switch (true) {
+        case mv.style.color == "rgb(222, 255, 101)":
+            sel = selm;
+        break;
+        case apr.style.color == "rgb(222, 255, 101)":
+            sel = sela;
+        break;
+        case ele.style.color == "rgb(222, 255, 101)":
+            sel = sele;
+        break;
+        case dv.style.color == "rgb(222, 255, 101)":
+            sel = seld;
+        break;
+        case nov.style.color == "rgb(222, 255, 101)":
+            sel = seln;
+        break;
+    }
+    dc();
     off.style.display = "none";
     newp.style.display = "none";
     pro.style.display = "none";
+    dsh[sel].style.display = "none";
     ld.style.opacity = "0";
     prodtxt[sel].style.display = "none";
     prod.style.width = "100vw";
     pr[sel].style.display = "none";
     prod.style.top = "13vh";
+    descdsh.textContent = dsh[sel].textContent;
     for (let i = 0; i < prods.length; i++) {
         prods[i].style.width = "70vw";
         prods[i].style.height = "65vh";
@@ -142,18 +162,18 @@ function amp() {
 }
 
 prod1.addEventListener("click", () => {
-    sel = 0;
+    selm = 0;
     amp();
 });
 prod1a.addEventListener("click", () => {
-    sel = 1;
+    sela = btnspv.length - 1;
     amp();
 });
 
 vol.addEventListener("click", () => {
-    off.style.display = "flex";
     newp.style.display = "flex";
     pro.style.display = "flex";
+    dsh[sel].style.display = "block";
     ld.style.display = "block";
     prodtxt[sel].style.display = "block";
     prod.style.width = "82vw";
@@ -180,6 +200,14 @@ vol.addEventListener("click", () => {
         txtp.textContent = "";
         prc.innerHTML = "";
         desc.style.display = "none";
+        notact = 0;
+        off.style.display = "flex";
+        sel = 0;
+        sela = 0;
+        seld = 0;
+        sele = 0;
+        seln = 0;
+        selm = 0;
     }, 300);
     i1();
 })
@@ -206,7 +234,7 @@ function myFunction() {
 sch.addEventListener("keyup", myFunction);
 
 setInterval(() => {
-    if(sel == 1) {
+    if(sela == 1) {
         newd.style.background = "linear-gradient(48deg, rgba(214,200,69,1) 0%, rgba(197,215,16,0.8911939775910365) 50%, rgba(255,246,46,0.7959558823529411) 100%)";
         newdes.textContent = "50% Off";
     }
@@ -217,8 +245,14 @@ setInterval(() => {
     if(sch.value.trim() == "") {
         myUL.style.display = "none";
     }
-    prn.textContent = (notact / cc).toFixed(1);
-    prn.style.textShadow = (notact / cc) >= 7? "0.3vh 0.3vh 0.3vh #126e00;" : (notact / cc) >= 4? "0.3vh 0.3vh 0.3vh #ebd534" : "0.3vh 0.3vh 0.3vh #eb3434";
+    if(notact != 0) {
+        prn.textContent = (notact / cc).toFixed(1);
+        prn.style.textShadow = (notact / cc) >= 7? "0.3vh 0.3vh 0.3vh #126e00" : (notact / cc) >= 4? "0.3vh 0.3vh 0.3vh #ebd534" : "0.3vh 0.3vh 0.3vh #eb3434";
+    }
+    else {
+        prn.textContent = "0.0";
+        prn.style.textShadow = "0.3vh 0.3vh 0.3vh #eb3434";
+    }
     switch (document.documentElement.lang) {
         case "en":
             flag.src = "https://cdn-icons-png.flaticon.com/512/330/330425.png";
@@ -373,9 +407,9 @@ function fic() {
     rate5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
     notact += 10;
 
-    cmtr = document.createElement("div");
-    cmtr.innerHTML = `<h1 class="ps1"></h1><p class="ctsc1"></p><h2 class="dt1"></h2>`;
-    cts.appendChild(cmtr);
+    cmtr2 = document.createElement("div");
+    cmtr2.innerHTML = `<h1 class="ps1"></h1><p class="ctsc1"></p><h2 class="dt1"></h2>`;
+    cts.appendChild(cmtr2);
     ctxt = document.querySelector(`.ctsc1`);
     cps = document.querySelector(`.ps1`);
     dt = document.querySelector(`.dt1`);
@@ -396,8 +430,6 @@ function fic() {
 
     cc = 2;
 }
-
-fic();
 
 function env() {
     if(coment.value.trim() == "") {
@@ -512,7 +544,17 @@ setInterval(() => {
     if(document.querySelector(".cts div")) {
         nd.style.display = "none";
     }
+    else {
+        nd.style.display = "block";
+    }
     switch (true) {
+        case prn.textContent * 1 < 1:
+            e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+            e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+        break;
         case prn.textContent * 1 < 2:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
@@ -625,3 +667,30 @@ window.onclick = function(event) {
         }, 300)
     }
   }
+  
+function fic2() {
+    if(document.querySelector(".cts div")) {
+    cmtr.remove();
+    cmtr2.remove();
+    cc = 0;
+    }
+}
+
+function dc() {
+    switch (sel) {
+        case 0:
+            p1.textContent = "X-Chair é uma cadeira muito confortável, parecida com uma cadeira de carro, mas que tem rodinhas para ir e voltar, além de que ela pode se reposicionar para cima e para baixo, possuindo os botoẽs para aumentar e diminuir a intensidade da vibração, contendo o analógico para a cadeira se mexer e dois porta copos.";
+            p2.textContent = "Materiais e tecnologias: 	Plástico, Bateria, IA, Sensores, Couro, Lã, Ferro, Borracha, Fio de Cobre, Caixinha de som e hidráulica.";
+            p3.textContent = "IA tem sensores para auxiliar a pessoa a não bater com velocidade máxima de 5 km/h.";
+            p4.textContent = "Pode-se ativar e desativar a vibração, posicionar a cadeira do jeito que o usuário quiser e tem setinhas para rotacioná-la.";
+            fic();
+        break;
+        case 1:
+            p1.textContent = "Ultra-Clean veio com mais uma incrível inovação para o mundo da limpeza criando o Robô Aspirador de Pó Smart, um aparelho com tecnologia de ponta que deixará a sua casa limpa como deveria ser.";
+            p2.textContent = "Contém uma IA para auxiliar na limpeza.";
+            p3.textContent = "A bateria dura em média 12 horas.";
+            p4.textContent = "O robô possui uma blindagem de alta qualidade para resistir a danos.";
+            fic2();
+        break;
+    }
+}
