@@ -121,6 +121,7 @@ function amp() {
         break;
     }
     dc();
+    quant.textContent = esto - vds;
     off.style.display = "none";
     newp.style.display = "none";
     pro.style.display = "none";
@@ -407,9 +408,9 @@ function fic() {
     rate5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
     notact += 10;
 
-    cmtr2 = document.createElement("div");
-    cmtr2.innerHTML = `<h1 class="ps1"></h1><p class="ctsc1"></p><h2 class="dt1"></h2>`;
-    cts.appendChild(cmtr2);
+    cmtr = document.createElement("div");
+    cmtr.innerHTML = `<h1 class="ps1"></h1><p class="ctsc1"></p><h2 class="dt1"></h2>`;
+    cts.appendChild(cmtr);
     ctxt = document.querySelector(`.ctsc1`);
     cps = document.querySelector(`.ps1`);
     dt = document.querySelector(`.dt1`);
@@ -541,6 +542,7 @@ coment.addEventListener("keyup", () => {
 })
 
 setInterval(() => {
+    const nd = document.querySelector("#nd");
     if(document.querySelector(".cts div")) {
         nd.style.display = "none";
     }
@@ -629,7 +631,16 @@ cpr.addEventListener("click", () => {
     }
     else if(quant.textContent > 0) {
         quant.textContent -= 1;
-        vds++;
+        switch (sel) {
+            case 0:
+                vendm++;
+                vds = vendm;
+            break;
+            case 1:
+                venda++;
+                vds = venda;
+            break;
+        }
         cbtn.addEventListener("click", env);
     }
 })
@@ -670,8 +681,7 @@ window.onclick = function(event) {
   
 function fic2() {
     if(document.querySelector(".cts div")) {
-    cmtr.remove();
-    cmtr2.remove();
+    cts.innerHTML = `<em id="nd">Não há comentários sobre esse produto</em>`;
     cc = 0;
     }
 }
@@ -683,13 +693,19 @@ function dc() {
             p2.textContent = "Materiais e tecnologias: 	Plástico, Bateria, IA, Sensores, Couro, Lã, Ferro, Borracha, Fio de Cobre, Caixinha de som e hidráulica.";
             p3.textContent = "IA tem sensores para auxiliar a pessoa a não bater com velocidade máxima de 5 km/h.";
             p4.textContent = "Pode-se ativar e desativar a vibração, posicionar a cadeira do jeito que o usuário quiser e tem setinhas para rotacioná-la.";
+            esto = 14;
+            vds = vendm;
+            if(notact == 0) {
             fic();
+            }
         break;
         case 1:
             p1.textContent = "Ultra-Clean veio com mais uma incrível inovação para o mundo da limpeza criando o Robô Aspirador de Pó Smart, um aparelho com tecnologia de ponta que deixará a sua casa limpa como deveria ser.";
             p2.textContent = "Contém uma IA para auxiliar na limpeza.";
             p3.textContent = "A bateria dura em média 12 horas.";
             p4.textContent = "O robô possui uma blindagem de alta qualidade para resistir a danos.";
+            esto = 29;
+            vds = venda;
             fic2();
         break;
     }
