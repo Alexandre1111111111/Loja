@@ -648,7 +648,7 @@ header {
     box-shadow: 0.5vh 0.5vh 1vh #000;
     border-color: #fff0658e;
 }
-#exc {
+#exc, #exc2 {
     height: 5vh;
     position: absolute;
     left: 15vw;

@@ -30,6 +30,7 @@ const e3 = document.querySelector(".e3");
 const e4 = document.querySelector(".e4");
 const e5 = document.querySelector(".e5");
 const exc = document.querySelector("#exc");
+const exc2 = document.querySelector("#exc2");
 const coment = document.querySelector("#coment");
 const cbtn = document.querySelector("#cbtn");
 const cts = document.querySelector(".cts");
@@ -60,6 +61,9 @@ const off = document.querySelector(".off");
 const pro = document.querySelector(".pro");
 const dsh = document.querySelectorAll("h1.dsh");
 const descdsh = document.querySelector(".descdsh");
+const img1i = document.querySelector("#img1 img");
+const img2i = document.querySelector("#img2 img");
+const img3i = document.querySelector("#img3 img");
 
 let parc;
 let txtc;

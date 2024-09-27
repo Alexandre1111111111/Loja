@@ -32,6 +32,7 @@ apr.addEventListener("click", () => {
     dv.style.borderColor = "#ffffff";
     nov.style.color = "#ffffff";
     nov.style.borderColor = "#ffffff";
+    exc2.style.display = "none";
     seg();
 });
 
@@ -121,6 +122,18 @@ function amp() {
         break;
     }
     dc();
+    switch (sel) {
+        case 0:
+            img1i.src = "xchair.png";
+            img2i.src = "x2.png";
+            img3i.src = "x3.png";
+        break;
+        case 1:
+            img1i.src = "robo.png";
+            img2i.src = "robo2.png";
+            img3i.src = "robo3.png";
+        break;
+    }
     quant.textContent = esto - vds;
     off.style.display = "none";
     newp.style.display = "none";
@@ -288,7 +301,6 @@ setInterval(() => {
 
 desl.addEventListener("click", () => {
     localStorage.logado = 'false';
-    localStorage.nome = '';
     localStorage.email = '';
     localStorage.senha = '';
     window.location.reload();
@@ -314,7 +326,14 @@ function i1() {
     img3.style.backgroundColor = "#00000065";
     img3.style.boxShadow = "0.5vh 0.5vh 0.5vh #000";
     img3.style.borderColor = "#000";
-    pimg[sel].src = "xchair.png";
+    switch (sel) {
+        case 0:
+            pimg[sel].src = "xchair.png";
+        break;
+        case 1:
+            pimg[sel].src = "robo.png";
+        break;
+    }
     if(pimg[sel].style.height != "60%") {
     pimg[sel].style.height = "80%";
     }
@@ -330,8 +349,14 @@ function i2() {
     img3.style.backgroundColor = "#00000065";
     img3.style.boxShadow = "0.5vh 0.5vh 0.5vh #000";
     img3.style.borderColor = "#000";
-    pimg[sel].src = "x2.png";
-    pimg[sel].style.height = "80%";
+    switch (sel) {
+        case 0:
+            pimg[sel].src = "x2.png";
+        break;
+        case 1:
+            pimg[sel].src = "robo2.png";
+        break;
+    }
 }
 
 function i3() {
@@ -344,8 +369,14 @@ function i3() {
     img1.style.backgroundColor = "#00000065";
     img1.style.boxShadow = "0.5vh 0.5vh 0.5vh #000";
     img1.style.borderColor = "#000";
-    pimg[sel].src = "x3.png";
-    pimg[sel].style.height = "85%";
+    switch (sel) {
+        case 0:
+            pimg[sel].src = "x3.png";
+        break;
+        case 1:
+            pimg[sel].src = "robo3.png";
+        break;
+    }
 }
 
 i1();
@@ -387,6 +418,10 @@ prox[i].addEventListener("click", () => {
 }
 
 function fic() {
+    if(document.querySelector(".cts div")) {
+        cts.innerHTML = `<em id="nd">Não há comentários sobre esse produto</em>`;
+        cc = 0;
+        }
     cmtr = document.createElement("div");
     cmtr.innerHTML = `<h1 class="ps0"></h1><p class="ctsc0"></p><h2 class="dt0"></h2>`;
     cts.appendChild(cmtr);
@@ -394,7 +429,7 @@ function fic() {
     cps = document.querySelector(`.ps0`);
     dt = document.querySelector(`.dt0`);
     dt.textContent = new Date("2023/10/03").toLocaleDateString();
-    cps.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/8246/8246830.png" alt=""><div><div class="e1c0"></div><div class="e2c0"></div><div class="e3c0"></div><div class="e4c0"></div><div class="e5c0"></div></div>Ricardo`;
+    cps.innerHTML = `<img style="border-radius: 3vh;" src="https://lh3.googleusercontent.com/a-/ALV-UjUTP2K0dA_yyAmuTd5yZskNzw4-ArNL_OcQg2OLPJgwnxU05GRs=s32-c" alt=""><div><div class="e1c0"></div><div class="e2c0"></div><div class="e3c0"></div><div class="e4c0"></div><div class="e5c0"></div></div>Ricardo`;
     ctxt.textContent = "Muito Bom! Vale a pena comprar!";
     rate1 = document.querySelector(`.e1c0`);
     rate2 = document.querySelector(`.e2c0`);
@@ -415,7 +450,7 @@ function fic() {
     cps = document.querySelector(`.ps1`);
     dt = document.querySelector(`.dt1`);
     dt.textContent = new Date("2024/05/27").toLocaleDateString();
-    cps.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt=""><div><div class="e1c1"></div><div class="e2c1"></div><div class="e3c1"></div><div class="e4c1"></div><div class="e5c1"></div></div>Allan`;
+    cps.innerHTML = `<img style="border-radius: 3vh;" src="https://lh3.googleusercontent.com/a-/ALV-UjUSuKHiDjjE1e7CWJmTMDrjOg_Ssrb_lHOw40_f4i9JLUliJjE=s32-c" alt=""><div><div class="e1c1"></div><div class="e2c1"></div><div class="e3c1"></div><div class="e4c1"></div><div class="e5c1"></div></div>Allan`;
     ctxt.textContent = "Legal! Mas não sei se vale o custo.";
     rate1 = document.querySelector(`.e1c1`);
     rate2 = document.querySelector(`.e2c1`);
@@ -550,63 +585,63 @@ setInterval(() => {
         nd.style.display = "block";
     }
     switch (true) {
-        case prn.textContent * 1 < 1:
+        case prn.textContent * 1 <= 1:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
         break;
-        case prn.textContent * 1 < 2:
+        case prn.textContent * 1 <= 2:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
         break;
-        case prn.textContent * 1 < 3:
+        case prn.textContent * 1 <= 3:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(meio.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
         break;
-        case prn.textContent * 1 < 4:
+        case prn.textContent * 1 <= 4:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
-        case prn.textContent * 1 < 5:
+        case prn.textContent * 1 <= 5:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(meio.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
-        case prn.textContent * 1 < 6:
+        case prn.textContent * 1 <= 6:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
-        case prn.textContent * 1 < 7:
+        case prn.textContent * 1 <= 7:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e4.style.backgroundImage = "url(meio.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
-        case prn.textContent * 1 < 8:
+        case prn.textContent * 1 <= 8:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
             break;
-        case prn.textContent * 1 < 9:
+        case prn.textContent * 1 <= 9:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
@@ -614,7 +649,7 @@ setInterval(() => {
             e5.style.backgroundImage = "url(meio.png)";
             break;
         default:
-        case prn.textContent * 1 < 10:
+        case prn.textContent * 1 <= 10:
             e1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
             e3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
@@ -684,6 +719,27 @@ function fic2() {
     cts.innerHTML = `<em id="nd">Não há comentários sobre esse produto</em>`;
     cc = 0;
     }
+    cmtr = document.createElement("div");
+    cmtr.innerHTML = `<h1 class="ps0"></h1><p class="ctsc0"></p><h2 class="dt0"></h2>`;
+    cts.appendChild(cmtr);
+    ctxt = document.querySelector(`.ctsc0`);
+    cps = document.querySelector(`.ps0`);
+    dt = document.querySelector(`.dt0`);
+    dt.textContent = new Date("2024/9/06").toLocaleDateString();
+    cps.innerHTML = `<img style="border-radius: 3vh;" src="https://lh3.googleusercontent.com/a-/ALV-UjUA-o80SVbS1QjQcsphSQL_H7GlisSD4pF5FXU4B2VWwvYRhWPp=s32-c" alt=""><div><div class="e1c0"></div><div class="e2c0"></div><div class="e3c0"></div><div class="e4c0"></div><div class="e5c0"></div></div>Weslei`;
+    ctxt.textContent = "Perca de tempo e dinheiro!";
+    rate1 = document.querySelector(`.e1c0`);
+    rate2 = document.querySelector(`.e2c0`);
+    rate3 = document.querySelector(`.e3c0`);
+    rate4 = document.querySelector(`.e4c0`);
+    rate5 = document.querySelector(`.e5c0`);
+    rate1.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408613.png)";
+    rate2.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+    rate3.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+    rate4.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+    rate5.style.backgroundImage = "url(https://cdn-icons-png.flaticon.com/512/7408/7408690.png)";
+    notact += 2;
+    cc = 1;
 }
 
 function dc() {
@@ -706,7 +762,9 @@ function dc() {
             p4.textContent = "O robô possui uma blindagem de alta qualidade para resistir a danos.";
             esto = 29;
             vds = venda;
+            if(notact == 0) {
             fic2();
+            }
         break;
     }
 }

@@ -20,7 +20,7 @@ const aparelhos = document.querySelector(".aparelhos");
 ppra = document.createElement("div");
 ppra.innerHTML = `<div class="prod1a pp">
             <div class="pro"><h1>50% Off</h1></div>
-            <img id="pimg" src="xchair.png" alt="">
+            <img id="pimg" src="robo.png" alt="">
             <div class="btnspv">
                 <button id="volt"><img src="https://cdn-icons-png.flaticon.com/512/8591/8591712.png" alt=""></button>
                 <button id="prox"><img src="https://cdn-icons-png.flaticon.com/512/8591/8591712.png" alt=""></button>
