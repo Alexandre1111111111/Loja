@@ -310,7 +310,25 @@ window.addEventListener("click", () => {
     myUL.style.display = "none";
 })
 
-myLI.addEventListener("click", amp);
+myLI.addEventListener("click", () => {
+    sel = 0;
+    mv.style.color = "#deff65";
+    mv.style.borderColor = "#deff65";
+    apr.style.color = "#ffffff";
+    apr.style.borderColor = "#ffffff";
+    ele.style.color = "#ffffff";
+    ele.style.borderColor = "#ffffff";
+    dv.style.color = "#ffffff";
+    dv.style.borderColor = "#ffffff";
+    nov.style.color = "#ffffff";
+    nov.style.borderColor = "#ffffff";
+    exc.style.display = "none";
+    prim();
+    i1();
+    setTimeout(() => {
+    amp();
+    }, 100)
+});
 
 for (let i = 0; i < 2; i++) {
     pimg[i].style.height = "60%";
