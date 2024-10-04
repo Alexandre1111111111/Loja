@@ -81,11 +81,15 @@ nov.addEventListener("click", () => {
 function prim() {
     moveis.style.display = "grid";
     aparelhos.style.display = "none";
+    sel = 0;
+    converter();
 }
 
 function seg() {
     moveis.style.display = "none";
     aparelhos.style.display = "grid";
+    sel = 1;
+    converter();
 }
 
 function ter() {
@@ -254,7 +258,23 @@ setInterval(() => {
     }
     else {
         newd.style.background = "linear-gradient(48deg, rgba(255,66,66,1) 0%, rgba(180,25,25,1) 50%, rgba(96,0,0,1) 100%)";
-        newdes.textContent = "Novo";
+        switch (document.documentElement.lang) {
+            case "en":
+                newdes.textContent = "Novo";
+            break;
+            case "es":
+                newdes.textContent = "Novo";
+            break;
+            case "pt":
+                newdes.textContent = "Novo";
+            break;
+            case "fr":
+                newdes.textContent = "Novo";
+            break;
+            case "ru":
+                newdes.textContent = "Новый";
+            break;
+        }
     }
     if(sch.value.trim() == "") {
         myUL.style.display = "none";
