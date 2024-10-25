@@ -9,7 +9,7 @@ ppr.innerHTML = `<div class="prod1 pp">
               <button id="prox"><img src="https://cdn-icons-png.flaticon.com/512/8591/8591712.png" alt=""></button>
           </div>
           <h1 class="dsh"></h1>
-          <h1 class="pr"><em class="ap">A partir de</em>R$<i id="vl">250.000</i></h1>
+          <h1 class="pr"><em class="ap">A partir de</em>R$<i id="vl">7.399</i></h1>
           <div class="prodtxt">
           <h1 class="nm">Cadeira Ergonomica Ultra-tecnológica - X-Chair</h1>
       </div>`;
@@ -25,8 +25,8 @@ ppra.innerHTML = `<div class="prod1a pp">
                 <button id="volt"><img src="https://cdn-icons-png.flaticon.com/512/8591/8591712.png" alt=""></button>
                 <button id="prox"><img src="https://cdn-icons-png.flaticon.com/512/8591/8591712.png" alt=""></button>
             </div>
-            <h1 class="dsh">R$<i class="ds">47.000</i></h1>
-            <h1 class="pr"><em class="ap">A partir de</em>R$<i id="vl">23.500</i></h1>
+            <h1 class="dsh">R$<i class="ds">600</i></h1>
+            <h1 class="pr"><em class="ap">A partir de</em>R$<i id="vl">300</i></h1>
             <div class="prodtxt">
             <h1 class="nm">Robô Aspirador de Pó Smart - Ultra-Clean</h1>
         </div>

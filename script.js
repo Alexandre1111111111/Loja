@@ -221,7 +221,6 @@ vol.addEventListener("click", () => {
         desc.style.display = "none";
         notact = 0;
         off.style.display = "flex";
-        id = 0;
         sela = 0;
         seld = 0;
         sele = 0;
@@ -318,6 +317,12 @@ setInterval(() => {
         ct.style.display = "block";
         lgi.style.display = "block";
         nmu.style.display = "none";
+    }
+    if(id == 1) {
+        vdi.style.display = "none";
+    }
+    else {
+        vdi.style.display = "flex";
     }
 }, 0)
 

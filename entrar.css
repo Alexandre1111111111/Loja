@@ -4,7 +4,9 @@ body{
     height: 100VH;
     overflow: hidden;
 }
-
+html {
+    font-family: "Roboto", sans-serif;
+}
 .main-login{
     width: 100vw;
     background:rgb(35, 42, 59) ;

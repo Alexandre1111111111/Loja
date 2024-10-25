@@ -26,6 +26,7 @@ const p2 = document.querySelector(".p2");
 const p3 = document.querySelector(".p3");
 const p4 = document.querySelector(".p4");
 const dh = document.querySelector("#desl h1");
+const vdi = document.querySelector(".vdi");
 
 let lang = "pt";
 let val = 0;
@@ -333,50 +334,50 @@ function txt() {
         case "en":
             switch (rd) {
                 case 1:
-                    otxt = `<em>!!!NEW!!!</em> --- Ultra-technological Ergonomic Chair - X-Chair, only for $45.000!!!`;
+                    otxt = `<em>!!!NEW!!!</em> --- Ultra-technological Ergonomic Chair - X-Chair, only for $1.332!!!`;
                 break;
                 case 2:
-                    otxt = `<em>!!!PROMOTION!!!</em> --- <em>50% OFF</em> --- Smart Robot Vacuum Cleaner - Ultra-Clean, only for $4.230!!!`;
+                    otxt = `<em>!!!PROMOTION!!!</em> --- <em>50% OFF</em> --- Smart Robot Vacuum Cleaner - Ultra-Clean, only for $54!!!`;
                 break;
             }
         break;
         case "es":
             switch (rd) {
                 case 1:
-                    otxt = `<em>!!!NUEVO!!!</em> --- Silla Ergonómica Ultratecnológica - X-Chair, sólo por 42.500€!!!`;
+                    otxt = `<em>!!!NUEVO!!!</em> --- Silla Ergonómica Ultratecnológica - X-Chair, sólo por 1.258€!!!`;
                 break;
                 case 2:
-                    otxt = `<em>!!!PROMOCIÓN!!!</em> --- <em>50% OFF</em> --- Robot aspirador inteligente - Ultra-Clean, sólo por 3.995€!!!`;
+                    otxt = `<em>!!!PROMOCIÓN!!!</em> --- <em>50% OFF</em> --- Robot aspirador inteligente - Ultra-Clean, sólo por 51€!!!`;
                 break;
             }
         break;
         case "pt":
             switch (rd) {
                 case 1:
-                    otxt = `<em>!!!NOVO!!!</em> --- Cadeira Ergonomica Ultra-tecnológica - X-Chair, apenas por R$250.000!!!`;
+                    otxt = `<em>!!!NOVO!!!</em> --- Cadeira Ergonomica Ultra-tecnológica - X-Chair, apenas por R$7.399!!!`;
                 break;
                 case 2:
-                    otxt = `<em>!!!PROMOÇÃO!!!</em> --- <em>50% OFF</em> --- Robô Aspirador de Pó Smart - Ultra-Clean, apenas por R$23.500!!!`;
+                    otxt = `<em>!!!PROMOÇÃO!!!</em> --- <em>50% OFF</em> --- Robô Aspirador de Pó Smart - Ultra-Clean, apenas por R$300!!!`;
                 break;
             }
         break;
         case "fr":
             switch (rd) {
                 case 1:
-                    otxt = `<em>!!!NOUVEAU!!!</em> --- Chaise ergonomique ultra-technologique - X-Chair, uniquement par 42.500€!!!`;
+                    otxt = `<em>!!!NOUVEAU!!!</em> --- Chaise ergonomique ultra-technologique - X-Chair, uniquement par 1.258€!!!`;
                 break;
                 case 2:
-                    otxt = `<em>!!!PROMOTION!!!</em> --- <em>50% OFF</em> --- Aspirateur robot intelligent - Ultra-propre, juste pour 3.995€!!!`;
+                    otxt = `<em>!!!PROMOTION!!!</em> --- <em>50% OFF</em> --- Aspirateur robot intelligent - Ultra-propre, juste pour 51€!!!`;
                 break;
             }
         break;
         case "ru":
             switch (rd) {
                 case 1:
-                    otxt = `<em>!!!НОВИНКА!!!</em> --- Ультратехнологичное эргономичное кресло X-Chair всего за ${parc}₽ реалов!!`;
+                    otxt = `<em>!!!НОВИНКА!!!</em> --- Ультратехнологичное эргономичное кресло X-Chair всего за 123.415₽ реалов!!`;
                 break;
                 case 2:
-                    otxt = `<em>!!!АКЦИЯ!!!</em> --- <em>СКИДКА 50%</em> --- Умный робот-пылесос — ультрачистый, всего за 23 500 реалов!!!`;
+                    otxt = `<em>!!!АКЦИЯ!!!</em> --- <em>СКИДКА 50%</em> --- Умный робот-пылесос — ультрачистый, всего за 5.004₽ реалов!!!`;
                 break;
             }
         break;
